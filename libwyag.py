@@ -148,3 +148,19 @@ def repo_find(path=".", required=True):
             return None
         
     return repo_find(parent,required)
+
+class GitObject(object):
+    def __init__(self, data = None):
+        if data != None:
+            self.deserialization(data)
+        else:
+            self.init()
+
+    def serialize(self,repo):
+        """Will be implemented by subclasses"""
+        raise Exception("Unimplemented")
+    def deserialize(self,data):
+        raise Exception("Unimplemented")
+    
+    def init(self):
+        pass
