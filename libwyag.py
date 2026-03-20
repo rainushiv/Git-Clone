@@ -127,4 +127,9 @@ def repo_default_config():
     return ret
 
 
+argsp = argsubparser.add_parser("init", help="Initializa a new, empty repository.")
 
+argsp.add_argument("path", metavar="directory", nargs="?",default=".",help="Where to create the repository")
+
+def cmd_init(args):
+    repo_create(args.path)
