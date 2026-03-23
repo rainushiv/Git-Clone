@@ -207,3 +207,6 @@ def object_write(obj, repo=None):
                 f.write(zlib.compress(result))
 
     return sha
+
+class GitBlob(GitObject):
+    fmt = b'blob'
